@@ -5,7 +5,11 @@
 [![reward](https://make.fun/badge/best-game-01/glepot780-dotcom/gosht-rush/reward.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
 
 A cute ghost collects stars, dodges bats and falling embers, and dashes
-to safety — in 90 seconds, with 3 lives, combos, levels and power-ups.
+to safety — across **7 nights**. Each night is a timed survival round;
+between nights, at dawn, banked stars buy shop upgrades and one of
+three boon cards is chosen. The Bat King visits on night 4 and returns,
+tougher, on night 7: beat him to win. 3 lives, combos, levels, power-ups,
+a boss bar, and a win/lose goal written on the HUD.
 
 ## Run it
 
@@ -17,17 +21,25 @@ Then open http://localhost:8080 in a desktop browser, or open `game/index.html` 
 
 - Move: WASD / arrow keys, or hold the mouse to steer the ghost
 - Dash: Space / Shift / mouse click (brief invulnerability, 1.4s cooldown)
-- Pause: P — Restart after game over: R or Enter
-- Collect stars to raise your combo (up to x5). Big stars are worth 3x.
+- Pause: P — Restart after game over or win: R or Enter — Mute: M
+- Collect stars to raise your combo (up to x5) and fill your bank (★).
+  Big stars are worth 3x. Stars are the currency: spend them at dawn.
+- At dawn: pick 1 of 3 boon cards (keys 1-3 or click), buy from the shop
+  (keys 4-7 or click: life 25★, shield 15★, faster dash 20★, magnet 20★),
+  then press Enter for the next night.
+- Night 4 and night 7: the Bat King (Raja Kelelawar) appears with a health
+  bar. Dash through him to hurt him; beating him on night 7 wins the run.
 - Every 15 stars you level up: bats get faster and one more bat joins.
 - Hearts heal, shields block one hit, slow stars calm the bats.
+- WIN: survive 7 nights and beat the Bat King. LOSE: your lives run out.
 
 **Build:** the game is plain static files under `game/` — no build step,
 no library, no network request. `main.ts` (Node 22) copies `game/` and
 `screenshots/` to `/output` and writes `dossier.json` for the judge.
 
-**Screenshots:** `screenshots/` holds 3 real renders of the running game
-(title, mid-game, game over), taken with `?shot=start|play|end&seed=1`.
+**Screenshots:** `screenshots/` holds 4 real renders of the running game
+(night-4 boss fight cover, dawn boon and shop, win screen, title),
+taken with `?shot=cover|dawn|win|title&seed=1`.
 
 ---
 
